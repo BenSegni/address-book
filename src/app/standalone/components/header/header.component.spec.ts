@@ -11,8 +11,7 @@ describe('HeaderComponent', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [HttpClientTestingModule],
-            declarations: [HeaderComponent, ShoppingBasketComponent, HeaderIconComponent]
+            imports: [HttpClientTestingModule, HeaderComponent, ShoppingBasketComponent, HeaderIconComponent],
         });
         fixture = TestBed.createComponent(HeaderComponent);
         component = fixture.componentInstance;

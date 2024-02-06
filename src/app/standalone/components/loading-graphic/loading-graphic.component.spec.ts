@@ -9,7 +9,7 @@ describe('LoadingGraphicComponent', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            declarations: [LoadingGraphicComponent, HeaderIconComponent]
+            imports: [LoadingGraphicComponent, HeaderIconComponent]
         });
         fixture = TestBed.createComponent(LoadingGraphicComponent);
         component = fixture.componentInstance;

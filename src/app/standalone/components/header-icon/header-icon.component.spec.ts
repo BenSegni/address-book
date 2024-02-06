@@ -8,7 +8,7 @@ describe('HeaderIconComponent', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            declarations: [HeaderIconComponent]
+            imports: [HeaderIconComponent]
         });
         fixture = TestBed.createComponent(HeaderIconComponent);
         component = fixture.componentInstance;

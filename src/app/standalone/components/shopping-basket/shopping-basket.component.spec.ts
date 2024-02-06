@@ -9,8 +9,7 @@ describe('ShoppingBasketComponent', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [HttpClientTestingModule],
-            declarations: [ShoppingBasketComponent]
+            imports: [HttpClientTestingModule, ShoppingBasketComponent],
         });
         fixture = TestBed.createComponent(ShoppingBasketComponent);
         component = fixture.componentInstance;

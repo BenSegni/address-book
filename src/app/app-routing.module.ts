@@ -7,7 +7,7 @@ const routes: Routes = [
         loadChildren: () => import('./modules/introduction/introduction.module').then(m => m.IntroductionModule)
     },
     {
-        path: 'search-addresses',
+        path: 'add-addresses',
         loadChildren: () => import('./modules/address-book/address-book.module').then(m => m.AddressBookModule)
     }
 ];

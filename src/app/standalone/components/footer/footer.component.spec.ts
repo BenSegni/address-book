@@ -9,7 +9,7 @@ describe('FooterComponent', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            declarations: [FooterComponent, HeaderIconComponent]
+            imports: [FooterComponent, HeaderIconComponent]
         });
         fixture = TestBed.createComponent(FooterComponent);
         component = fixture.componentInstance;

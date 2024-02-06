@@ -10,9 +10,7 @@ import { AddressDetailPageComponent } from './components/address-detail-page/add
 import { AddressErrorComponent } from './components/address-error/address-error.component';
 import { AddressSuccessComponent } from './components/address-success/address-success.component';
 import { UiErrorPipe } from '../../global/utils/pipes/error/ui-error.pipe';
-import { GlobalElementsModule } from '../global-elements/global-elements.module';
-
-
+import { LoadingGraphicComponent } from '../../standalone/components/loading-graphic/loading-graphic.component';
 
 @NgModule({
     declarations: [
@@ -29,7 +27,7 @@ import { GlobalElementsModule } from '../global-elements/global-elements.module'
     imports: [
         UtilsModule,
         AddressRoutingModule,
-        GlobalElementsModule
+        LoadingGraphicComponent
     ]
 })
 export class AddressBookModule { }
