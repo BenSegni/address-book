@@ -1,0 +1,8 @@
+<div class="error-message" *ngIf="errorMessage$().errorData.length">
+    <h2><span [innerText]=" errorMessage$().status"></span></h2>
+    <img [src]="bobaFett" [alt]="bobaFett | altText">
+    <p [innerText]="'See what you missed out...'"></p>
+    <ol>
+        <li *ngFor="let error of errorMessage$().errorData" [innerText]="error.message | uiError"></li>
+    </ol>
+</div>

@@ -1,0 +1,42 @@
+@mixin mobile-width() {
+    width: 90vw;
+}
+.introduction-wrapper {
+    @include flex-layout();
+    @include align-center();
+    @include flex-layout-column();
+    height: 90vh;
+
+    img {
+        margin-top: 3rem;
+        margin-bottom: -4rem;
+        z-index: 2;
+    }
+
+    .dialogue-slot {
+        @include flex-layout();
+        @include align-center();
+        height: 3rem;
+        width: 100vw;
+
+        h1 {
+            @include speech-bubble();
+        }
+
+        @include small-mobile() {
+            @include mobile-width();
+        }
+
+        @include mobile() {
+            @include mobile-width();
+        }
+
+        @include tablet() {
+            @include mobile-width();
+        }
+    }
+
+    a {
+        @include button();
+    }
+}

@@ -1,0 +1,25 @@
+.shopping-basket {
+    margin-left: auto;
+    margin-right: 3rem;
+
+    span {
+        color: $color-five;;
+
+        svg {
+            fill: $color-five;
+        }
+    }
+}
+
+header {
+    app-header-icon {
+        svg {
+            cursor: pointer;
+            fill: $color-four;
+
+            &:hover {
+                fill: $color-five;
+            }
+        }
+    }
+}

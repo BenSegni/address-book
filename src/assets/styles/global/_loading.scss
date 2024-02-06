@@ -1,0 +1,14 @@
+.loading-graphic {
+    @include flex-layout();
+    @include align-center();
+    height: 90vh;
+    @include rotate();
+
+    app-header-icon {
+        svg {
+            height: 10rem;
+            width: 10rem;
+            fill: $color-five;
+        }
+    }
+}

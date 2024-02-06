@@ -1,0 +1,30 @@
+.form {
+    @include flex-layout();
+    @include flex-layout-column();
+
+    label {
+        color: $color-five;;
+        font-size: .85rem;
+        margin-top: 1rem;
+    }
+
+    input {
+        @include text-input();
+    }
+
+    .invalid-field {
+        display: flex;
+        color: $color-six;
+        margin: .5rem 0;
+        padding: .5rem;
+        border: .125rem solid $color-six;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    button {
+        @include button();
+    }
+}

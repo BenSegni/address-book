@@ -1,0 +1,16 @@
+<ng-container *ngIf="address; else loading">
+    <div class="address-detail-page">
+        <h2 [innerText]="pageHeader"></h2>
+        <div class="address-detail-card">
+            <p><span [innerText]="address.addressee"></span></p>
+            <p><span [innerText]="address.streetLineOne"></span></p>
+            <p *ngIf="address.streetLineTwo"><span [innerText]="address.streetLineTwo"></span></p>
+            <p><span [innerText]="address.town"></span></p>
+            <p><span [innerText]="address.county"></span></p>
+            <p><a [routerLink]="'..'" [innerText]="'Go Back'"></a></p>
+        </div>
+    </div>
+</ng-container>
+<ng-template #loading>
+    <app-loading-graphic></app-loading-graphic>
+</ng-template>

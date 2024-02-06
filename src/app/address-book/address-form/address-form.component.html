@@ -1,0 +1,35 @@
+<div class="address-component-wrapper">
+    <h2 [innerText]="'Add Addresses'"></h2>
+    <form *ngIf="addressForm" class="form" [formGroup]="addressForm" (ngSubmit)="addAddress(addressForm)">
+        <label for="addressee">Addressee</label>
+        <input id="addressee" type="text" formControlName="addressee">
+        <div *ngIf="form['addressee'].touched && form['addressee'].errors" class="invalid-field">
+            <p *ngIf="form['addressee'].errors['required']" [innerText]="'Addressee must not be empty!!!'"></p>
+        </div>
+        <label for="streetLineOne">Street Line One</label>
+        <input id="streetLineOne" type="text" formControlName="streetLineOne">
+        <div *ngIf="form['streetLineOne'].touched && form['streetLineOne'].errors" class="invalid-field">
+            <p *ngIf="form['streetLineOne'].errors['required']" [innerText]="'Street name one must not be empty!!!'"></p>
+        </div>
+        <label for="streetLineTwo">Street Line Two</label>
+        <input id="streetLineTwo" type="text" formControlName="streetLineTwo">
+        <label for="town">Town</label>
+        <input id="town" type="text" formControlName="town">
+        <div *ngIf="form['town'].touched && form['town'].errors" class="invalid-field">
+            <p *ngIf="form['town'].errors['required']" [innerText]="'Town name must not be empty!!!'"></p>
+        </div>
+        <label for="county">County</label>
+        <input id="county" type="text" formControlName="county">
+        <div *ngIf="form['county'].touched && form['county'].errors" class="invalid-field">
+            <p *ngIf="form['county'].errors['required']" [innerText]="'County must not be empty!!!'"></p>
+        </div>
+        <label for="postcode">Postcode</label>
+        <input id="postcode" type="text" formControlName="postcode">
+        <div *ngIf="form['postcode'].touched && form['postcode'].errors" class="invalid-field">
+            <p *ngIf="form['postcode'].errors['required']" [innerText]="'Postcode must not be empty!!!'"></p>
+            <p *ngIf="form['postcode'].errors['minlength']" [innerText]="'A minimum of 5 characters are required!!!'"></p>
+            <p *ngIf="form['postcode'].errors['maxlength']" [innerText]="'A maximum of 8 characters are required!!!'"></p>
+        </div>
+        <button type="submit">Add Address</button>
+    </form>
+</div>

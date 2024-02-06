@@ -1,0 +1,5 @@
+<div class="success-message" *ngIf="successMessage$().message">
+    <img [src]="bobaFett" [alt]="bobaFett | altText">
+    <h2><span>{{ successMessage$().message }}</span></h2>
+    <p>You now owe me {{  successMessage$().debt }} Credits!!!</p>
+</div>

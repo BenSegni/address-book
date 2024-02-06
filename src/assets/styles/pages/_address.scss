@@ -1,0 +1,95 @@
+@mixin address-image {
+    height: 3rem;
+    width: auto;
+}
+
+.address-wrapper {
+    @include flex-layout();
+    margin-top: 8rem;
+
+    .address-component-wrapper {
+        display: block;
+        padding: 2rem;
+    }
+
+    .error-message {
+        @include message(rgba($color: #4d1414, $alpha: 0.8));
+
+        img {
+            @include address-image();
+            margin-top: 1rem;
+        }
+
+        h2 {
+            @include speech-bubble();
+        }
+
+        p {
+            color: $color-five;
+        }
+
+        ol {
+            @include flex-layout();
+            @include flex-layout-column();
+            width: 100%;
+
+            li {
+                color: $color-five;
+                ;
+            }
+        }
+    }
+
+    .success-message {
+        @include message(rgba($color: $color-three, $alpha: 0.8));
+
+        p {
+            color: $color-five;
+            ;
+        }
+
+        img {
+            @include address-image();
+        }
+    }
+
+    @include small-mobile() {
+        @include flex-layout-column();
+    }
+
+    @include mobile() {
+        @include flex-layout-column();
+    }
+
+    @include tablet() {
+        @include flex-layout-column();
+    }
+}
+
+.address-detail-page {
+    @include flex-layout();
+    @include flex-layout-column();
+    margin: 8rem 2rem 0 2rem;
+}
+
+.address-detail-card {
+    @include flex-layout();
+    @include flex-layout-column();
+    justify-content: center;
+    border: .125rem solid $color-two;
+    padding: 1rem;
+    border-radius: .25rem;
+    margin-bottom: 1rem;
+    flex: 1;
+
+    span {
+        @include flex-layout();
+        padding-bottom: .5rem;
+        border-bottom: .125rem solid $color-five;
+        flex: 1;
+    }
+
+    a {
+        @include button();
+    }
+}

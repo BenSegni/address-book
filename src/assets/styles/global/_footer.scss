@@ -1,0 +1,17 @@
+footer {
+    @include flex-layout();
+    @include flex-layout-column();
+    @include align-center();
+    background-color: black;
+    padding: 1rem 0;
+    margin-top: 2rem;
+
+    svg {
+        height: 1.75rem;
+        fill: $color-four;
+    }
+
+    small {
+        color: $color-five;
+    }
+}

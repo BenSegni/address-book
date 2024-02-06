@@ -1,0 +1,12 @@
+<div class="introduction-wrapper">
+    <div class="dialogue-slot">
+        <ng-container *ngIf="intro$ | async as intro">
+            <h1 [innerText]="_introductionService.introductionFinished ? waitingMessage : intro.text"></h1>
+        </ng-container>
+    </div>
+    <img [src]="bobafett" [alt]="bobafett | altText">
+    <app-introduction-background></app-introduction-background>
+    <ng-container *ngIf="_introductionService.introductionFinished">
+        <app-search-address-link [introductionIsFinished]="_introductionService.introductionFinished"></app-search-address-link>
+    </ng-container>
+</div>

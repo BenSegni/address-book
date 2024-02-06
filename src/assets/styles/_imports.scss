@@ -1,0 +1,33 @@
+@import './color';
+@import './responsive';
+@import './mixins';
+@import './global/header';
+@import './global/footer';
+@import './global/loading';
+@import './pages/introduction';
+@import './pages/address';
+@import './forms/forms';
+
+body {
+    font-family: 'Bangers', system-ui;
+    background-color: $color-one;
+    color: $color-two;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    background-color: #333;
+    @include flex-layout();
+    @include align-center();
+    justify-content: space-between;
+    padding: 1rem;
+    z-index: 999;
+}
+
+.app-header {
+    text-align: center;
+}

@@ -1,0 +1,3 @@
+<h3 class="shopping-basket">You owe Boba
+    <span><app-credit-symbol *ngIf="currentCost$() !== 0"></app-credit-symbol>{{ currentCost$() === 0 ? 'Nothing' : (currentCost$() + 'Credits') }} </span>
+</h3>

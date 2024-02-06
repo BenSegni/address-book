@@ -1,0 +1,108 @@
+@mixin flex-layout {
+    display: flex;
+}
+
+@mixin flex-layout-column {
+    flex-direction: column;
+}
+
+@mixin align-center {
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin button {
+    font-family: inherit;
+    @include flex-layout();
+    @include align-center();
+    background-color: $color-three;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 10rem;
+    border: .125rem solid $color-two;
+    color: $color-five;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $color-two;
+        color: $color-one;
+    }
+}
+
+@mixin text-input {
+    font-family: inherit;
+    color: $color-five;;
+    background-color: $color-one;
+    border: .125rem solid $color-five;
+    margin: 1rem 0 0 0;
+    padding: .75rem;
+    border-radius: .5rem;
+
+    &:-internal-autofill-selected {
+        background-color: red;
+    }
+}
+
+@mixin mobile-bubble-text() {
+    font-size: 1.5rem;
+}
+
+@mixin speech-bubble {
+    position: relative;
+    border: .125rem solid $color-two;
+    border-radius: .25rem;
+    padding: 1rem;
+    text-align: center;
+    color: $color-five;
+
+    &:before {
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        border-left: 10px solid $color-two;
+        border-right: 10px solid transparent;
+        border-top: 10px solid $color-two;
+        border-bottom: 10px solid transparent;
+        right: -20px;
+        left: 50%;
+        bottom: -1.35rem;
+    }
+
+    @include small-mobile() {
+        @include mobile-bubble-text();
+    }
+
+    @include mobile() {
+        @include mobile-bubble-text();
+    }
+
+    @include tablet() {
+        @include mobile-bubble-text();
+    }
+}
+
+@mixin message($background) {
+    @include flex-layout();
+    background-color: $background;
+    @include flex-layout-column();
+    @include align-center();
+    border: .125rem solid $color-five;
+    padding: 2rem;
+    margin-bottom: 1rem;
+}
+
+@mixin rotate {
+    animation: rotation 1s infinite linear;
+
+    @keyframes rotation {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}
