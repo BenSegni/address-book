@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AddressService } from '../../services/address.service';
+import { ImageEnum } from '../../../../global/utils/enum/image.enum';
 
 @Component({
     selector: 'app-address-success',
@@ -7,6 +8,6 @@ import { AddressService } from '../../services/address.service';
 })
 export class AddressSuccessComponent {
     public successMessage$ = this._addressService.successMessage$;
-    public bobaFett = '../../../assets/img/boba_fett.svg';
+    public bobaFett = ImageEnum.BobaFett;
     public constructor(private _addressService: AddressService) { }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IntroductionService } from '../../services/introduction.service';
+import { ImageEnum } from '../../../../global/utils/enum/image.enum';
 
 @Component({
     selector: 'app-introduction',
@@ -8,7 +9,7 @@ import { IntroductionService } from '../../services/introduction.service';
 export class IntroductionComponent {
     public intro$ = this._introductionService.dialogueStream();
     public waitingMessage = 'Tick Tock Mr Wick...';
-    public bobafett = '../../../assets/img/boba_fett.svg';
+    public bobafett = ImageEnum.BobaFett;
 
     public constructor(public _introductionService: IntroductionService) {}
 
