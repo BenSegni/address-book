@@ -14,21 +14,22 @@ export const addressFormMock: FormGroup = new FormGroup({
     ])
 });
 
-export const addressUIMock: AddressUI = {
+const addressBase = {
     addressee: 'Mr Test',
-    streetLineOne: 'Test Street',
-    streetLineTwo: 'Test Street 2',
     town: 'test Town',
     county: 'Test County',
     postcode: 'tes tco'
 }
 
+export const addressUIMock: AddressUI = {
+    ...addressBase,
+    streetLineOne: 'Test Street',
+    streetLineTwo: 'Test Street 2',
+}
+
 export const addressMock: Address = {
+    ...addressBase,
     addressId: 'test-id-test-id',
-    addressee: 'Mr Test',
     street1: 'Test Street',
     street2: 'Test Street 2',
-    town: 'test Town',
-    county: 'Test County',
-    postcode: 'tes tco'
 }
