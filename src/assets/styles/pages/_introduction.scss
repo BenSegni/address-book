@@ -1,6 +1,11 @@
 @mixin mobile-width() {
     width: 90vw;
 }
+
+@mixin mobile-height() {
+    height: 100vh;
+}
+
 .introduction-wrapper {
     @include flex-layout();
     @include align-center();
@@ -38,5 +43,21 @@
 
     a {
         @include button();
+    }
+
+    .introduction-background {
+        width: 100%;
+    }
+
+    @include small-mobile() {
+        @include mobile-height();
+    }
+
+    @include mobile() {
+        @include mobile-height();
+    }
+
+    @include tablet() {
+        @include mobile-height();
     }
 }

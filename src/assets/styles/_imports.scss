@@ -30,4 +30,16 @@ header {
 
 .app-header {
     text-align: center;
+
+    @include small-mobile() {
+        font-size: 1rem;
+    }
+
+    @include mobile() {
+        font-size: 1rem;
+    }
+
+    @include tablet() {
+        font-size: 1.5rem;
+    }
 }
