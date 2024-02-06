@@ -24,5 +24,5 @@
 7. Unit Testing with coverage 94.54% with Jasmine, Karma and Instanbul Coverage Report
 8. Some animations and star wars concept added to make it a little more fun!!!
 (8i). api moved to root with new shell script to trigger the server
-(8ii). General Accessibility measures taken and checked via Wave plugin (1 alert, but h1 tag is ion the document situated in the header component)
+(8ii). General Accessibility measures taken and checked via Wave plugin (1 alert, but h1 tag is in the document situated in the header component)
 (8iii). replaced html templates with optimised svg where necessary
