@@ -97,10 +97,8 @@
                         ],
                         "scripts": [],
                         "codeCoverageExclude": [
-                            "/**/address-book/interface/**",
-                            "/**/address-book/_mocks/**",
+                            "/**/address-book/models/**",
                             "/**/address-book/_services/form-group/**",
-                            "/**/address-book/enum/**",
                             "/**/global/**",
                             "/**/introduction/data/**"
                         ]
