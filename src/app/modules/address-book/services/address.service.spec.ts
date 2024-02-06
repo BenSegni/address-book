@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { AddressService } from './address.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { addressMock, addressUIMock } from '../models/mocks/address.mock';
+import { addressUIMock } from '../models/mocks/address.mock';
 import { Address, AddressUI } from '../models/interface/address';
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Observable, Subscription, of, throwError } from 'rxjs';

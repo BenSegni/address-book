@@ -1,4 +1,4 @@
-import { FormGroup, Validators } from "@angular/forms";
+import { Validators } from "@angular/forms";
 
 export const addressFormGroup = {
     addressee: ['', Validators.required],
