@@ -8,9 +8,11 @@ export interface ErrorData {
 }
 
 export class ErrorMessageMapper {
+    private static unknownErrorMessage = "Hmmm, think the server isn't running?";
+
     public static map(data: any): AddressErrorMessage {
         return {
-            status: `Hey!!!! ${data.statusText}!!!`,
+            status: data.statusText.includes('Unknown') ? this.unknownErrorMessage :`Hey!!!! ${data.statusText}!!!`,
             errorData: this.arrayMap(data)
         }
     }
