@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IntroductionService } from '../../services/introduction.service';
 import { ImageEnum } from '../../../../global/utils/enum/image.enum';
 
@@ -6,7 +6,7 @@ import { ImageEnum } from '../../../../global/utils/enum/image.enum';
     selector: 'app-introduction',
     templateUrl: './introduction.component.html',
 })
-export class IntroductionComponent {
+export class IntroductionComponent implements OnInit {
     public intro$ = this._introductionService.dialogueStream();
     public waitingMessage = 'Tick Tock Mr Wick. Tick Tock';
     public bobafett = ImageEnum.BobaFett;

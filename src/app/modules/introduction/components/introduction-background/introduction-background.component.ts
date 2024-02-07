@@ -4,6 +4,4 @@ import { Component } from '@angular/core';
     selector: 'app-introduction-background',
     templateUrl: './intro_background.svg',
 })
-export class IntroductionBackgroundComponent {
-
-}
+export class IntroductionBackgroundComponent {}
