@@ -20,7 +20,7 @@ header {
     position: fixed;
     top: 0;
     width: 100vw;
-    background-color: #333;
+    background-color: $color-eight;
     @include flex-layout();
     @include align-center();
     justify-content: space-between;
