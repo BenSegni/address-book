@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AddressService } from '../../services/address.service';
 
 @Component({
     selector: 'app-address',
     templateUrl: './address.component.html',
-    styleUrls: ['./address.component.scss']
+    styleUrls: ['./address.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AddressComponent {
     public adresses$ = this._addressService.addresses$;
