@@ -3,12 +3,12 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AddressBookComponent } from './address-book.component';
 import { AddressFormComponent } from '../address-form/address-form.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { AddressComponent } from '../address/address.component';
-import { AddressMessageComponent } from '../address-message/address-message.component';
+import { AddressListComponent } from '../address-list/address-list.component';
 import { AddressErrorComponent } from '../address-error/address-error.component';
 import { AddressSuccessComponent } from '../address-success/address-success.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddressFormErrorComponent } from '../address-form-error/address-form-error.component';
+import { AddAddressResultComponent } from '../add-address-result/add-address-result.component';
 
 describe('AddressBookComponent', () => {
     let component: AddressBookComponent;
@@ -24,8 +24,8 @@ describe('AddressBookComponent', () => {
             declarations: [
                 AddressBookComponent,
                 AddressFormComponent,
-                AddressComponent,
-                AddressMessageComponent,
+                AddressListComponent,
+                AddAddressResultComponent,
                 AddressErrorComponent,
                 AddressSuccessComponent,
                 AddressFormErrorComponent

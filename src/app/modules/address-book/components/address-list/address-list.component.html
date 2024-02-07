@@ -1,10 +1,10 @@
 <div class="address-component-wrapper">
     <h2>My Addresses</h2>
-    <app-address-message></app-address-message>
+    <app-add-address-result></app-add-address-result>
     <app-loading-graphic *ngIf="_addressService.isLoading"></app-loading-graphic>
     <ng-container *ngIf="adresses$().length">
         <div *ngFor="let address of adresses$()">
-            <app-address-detail *ngIf="address.addressId" [addressDetail]="address"></app-address-detail>
+            <app-address-card *ngIf="address.addressId" [addressCard]="address"></app-address-card>
         </div>
     </ng-container>
 </div>

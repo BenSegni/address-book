@@ -20,4 +20,13 @@ describe('IntroductionComponent', () => {
     it('should create', () => {
         expect(component).toBeTruthy();
     });
+
+    describe('Testing skipButtonWasClicked()', () => {
+        it('should show a different waiting message and end introduction', () => {
+            component.skipButtonWasClicked();
+
+            expect(component.waitingMessage).toBe(component.skipIntroductionMessage);
+            expect(component._introductionService.introductionFinished).toBeTruthy();
+        })
+    })
 });

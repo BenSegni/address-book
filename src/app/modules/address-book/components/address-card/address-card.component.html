@@ -1,0 +1,10 @@
+<ng-container *ngIf="addressCard">
+    <div @fade class="address-detail-card">
+        <p><span [innerText]="addressCard.addressee"></span></p>
+        <p><span [innerText]="addressCard.street1"></span></p>
+        <p *ngIf="addressCard.street2"><span [innerText]="addressCard.street2"></span></p>
+        <p><span [innerText]="addressCard.town">{{ addressCard.town }}</span></p>
+        <p><span [innerText]="addressCard.county"></span></p>
+        <p><a [routerLink]="addressCard.addressId" [innerText]="'See Address'"></a></p>
+    </div>
+</ng-container>
