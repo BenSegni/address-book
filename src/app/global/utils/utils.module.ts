@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AltTextPipe } from './pipes/alt.text/alt-text.pipe';
+import { UiErrorPipe } from './pipes/error/ui-error.pipe';
 
 
 
 @NgModule({
-    declarations: [AltTextPipe],
+    declarations: [AltTextPipe, UiErrorPipe],
     imports: [
         CommonModule,
         HttpClientModule,
@@ -19,7 +20,8 @@ import { AltTextPipe } from './pipes/alt.text/alt-text.pipe';
         HttpClientModule,
         FormsModule,
         ReactiveFormsModule,
-        AltTextPipe
+        AltTextPipe,
+        UiErrorPipe
     ]
 })
 export class UtilsModule { }
