@@ -8,6 +8,7 @@ import { AddressMessageComponent } from '../address-message/address-message.comp
 import { AddressErrorComponent } from '../address-error/address-error.component';
 import { AddressSuccessComponent } from '../address-success/address-success.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddressFormErrorComponent } from '../address-form-error/address-form-error.component';
 
 describe('AddressBookComponent', () => {
     let component: AddressBookComponent;
@@ -26,7 +27,8 @@ describe('AddressBookComponent', () => {
                 AddressComponent,
                 AddressMessageComponent,
                 AddressErrorComponent,
-                AddressSuccessComponent
+                AddressSuccessComponent,
+                AddressFormErrorComponent
             ]
         });
         fixture = TestBed.createComponent(AddressBookComponent);

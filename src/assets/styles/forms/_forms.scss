@@ -3,9 +3,10 @@
     @include flex-layout-column();
 
     label {
+        display: block;
         color: $color-five;;
         font-size: .85rem;
-        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
 
     input {
@@ -14,8 +15,9 @@
 
     .invalid-field {
         display: flex;
+        width: auto;
         color: $color-six;
-        margin: .5rem 0;
+        margin: 0 0 1rem 0;
         padding: .5rem;
         border: .125rem solid $color-six;
 

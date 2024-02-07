@@ -5,6 +5,7 @@ import { AddressFormComponent } from './address-form.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { addressFormMock, addressMock, addressUIMock } from '../../models/mocks/address.mock';
 import { of } from 'rxjs';
+import { AddressFormErrorComponent } from '../address-form-error/address-form-error.component';
 
 describe('AddressFormComponent', () => {
     let component: AddressFormComponent;
@@ -13,7 +14,7 @@ describe('AddressFormComponent', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
             imports: [HttpClientTestingModule, FormsModule, ReactiveFormsModule],
-            declarations: [AddressFormComponent]
+            declarations: [AddressFormComponent, AddressFormErrorComponent]
         });
         fixture = TestBed.createComponent(AddressFormComponent);
         component = fixture.componentInstance;

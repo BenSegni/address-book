@@ -1,0 +1,9 @@
+<ng-container *ngIf="control">
+    <label>{{ label }}</label>
+    <ng-content></ng-content>
+    <div *ngIf="control && control.touched && control.errors" class="invalid-field">
+        <p *ngIf="control.errors['required']">{{ label }} must not be empty!!!</p>
+        <p *ngIf="control.errors['minlength']" >A minimum of {{ minLength }} characters are required!!!</p>
+        <p *ngIf="control.errors['maxlength']" >A maximum of {{ maxLength }} characters are required!!!</p>
+    </div>
+</ng-container>

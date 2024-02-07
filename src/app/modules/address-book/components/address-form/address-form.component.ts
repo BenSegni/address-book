@@ -11,7 +11,6 @@ import { take } from 'rxjs';
 })
 export class AddressFormComponent {
     public addressForm: FormGroup = this._addressFormService.createForm();
-    public errorMessage$ = this._addressService.errorMessage$;
 
     public constructor(private _addressFormService: AddressFormService, private _addressService: AddressService) { }
 

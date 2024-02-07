@@ -10,6 +10,7 @@ import { AddressDetailPageComponent } from './components/address-detail-page/add
 import { AddressErrorComponent } from './components/address-error/address-error.component';
 import { AddressSuccessComponent } from './components/address-success/address-success.component';
 import { LoadingGraphicComponent } from '../../standalone/components/loading-graphic/loading-graphic.component';
+import { AddressFormErrorComponent } from './components/address-form-error/address-form-error.component';
 
 @NgModule({
     declarations: [
@@ -21,6 +22,7 @@ import { LoadingGraphicComponent } from '../../standalone/components/loading-gra
         AddressDetailPageComponent,
         AddressErrorComponent,
         AddressSuccessComponent,
+        AddressFormErrorComponent,
     ],
     imports: [
         UtilsModule,

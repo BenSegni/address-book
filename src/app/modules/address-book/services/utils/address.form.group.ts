@@ -1,14 +1,14 @@
-import { Validators } from "@angular/forms";
+import { FormControl, Validators } from "@angular/forms";
 
 export const addressFormGroup = {
-    addressee: ['', Validators.required],
-    streetLineOne: ['', Validators.required],
-    streetLineTwo: [''],
-    town: ['', Validators.required],
-    county: ['', Validators.required],
-    postcode: ['', [
+    addressee: new FormControl('', Validators.required),
+    streetLineOne: new FormControl('', Validators.required),
+    streetLineTwo: new FormControl(''),
+    town: new FormControl('', Validators.required),
+    county: new FormControl('', Validators.required),
+    postcode: new FormControl('', [
         Validators.required,
         Validators.minLength(5),
         Validators.maxLength(8)
-    ]]
+    ])
 }
