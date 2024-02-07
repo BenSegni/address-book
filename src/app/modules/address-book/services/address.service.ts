@@ -2,11 +2,9 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable, WritableSignal, signal } from '@angular/core';
 import { Address, AddressApiMapper, AddressMapper, AddressUI } from '../models/interface/address';
 import { Observable, catchError, map, of, tap } from 'rxjs';
-import { apiConfig } from '../../../global/api/api.config';
+import { api } from '../../../global/api/api.config';
 import { AddressErrorMessage, ErrorMessageMapper } from '../models/interface/address.error';
 import { AddressSuccessMessage } from '../models/interface/address.success';
-
-const api = `${apiConfig.url}${apiConfig.port}/${apiConfig.address}`;
 
 @Injectable({
     providedIn: 'root'

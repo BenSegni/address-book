@@ -3,3 +3,5 @@ export const apiConfig = {
     port: 5062,
     address: 'address'
 }
+
+export const api = `${apiConfig.url}${apiConfig.port}/${apiConfig.address}`;

@@ -8,7 +8,7 @@ import { ImageEnum } from '../../../../global/utils/enum/image.enum';
 })
 export class IntroductionComponent {
     public intro$ = this._introductionService.dialogueStream();
-    public waitingMessage = 'Tick Tock Mr Wick...';
+    public waitingMessage = 'Tick Tock Mr Wick. Tick Tock';
     public bobafett = ImageEnum.BobaFett;
 
     public constructor(public _introductionService: IntroductionService) {}

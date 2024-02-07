@@ -7,9 +7,9 @@ import { IntroductionDialogue } from '../models/interface/introduction.dialogue'
     providedIn: 'root'
 })
 export class IntroductionService {
-    public dialogue$ = from(dialogue);
-    public delay$ = timer(13500);
     public introductionFinished = false;
+    private dialogue$ = from(dialogue);
+    private delay$ = timer(13500);
 
     public dialogueStream(): Observable<IntroductionDialogue> {
         return this.dialogue$.pipe(

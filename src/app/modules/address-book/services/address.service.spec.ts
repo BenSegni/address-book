@@ -1,25 +1,24 @@
 import { TestBed } from '@angular/core/testing';
 
 import { AddressService } from './address.service';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { addressUIMock } from '../models/mocks/address.mock';
 import { Address, AddressUI } from '../models/interface/address';
-import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
-import { Observable, Subscription, of, throwError } from 'rxjs';
-import { apiConfig } from '../../../global/api/api.config';
-
-const api = `${apiConfig.url}${apiConfig.port}/${apiConfig.address}`;
+import { HttpResponse } from '@angular/common/http';
+import { Observable, Subscription, of } from 'rxjs';
+import { httpSpy, mappedErrorResponse } from '../models/mocks/http.error.mock';
 
 describe('AddressService', () => {
     let service: AddressService;
-    let httpMock: HttpTestingController;
+    let signalSpy: jasmine.Spy;
+    let globalSpy: jasmine.Spy;
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [HttpClientTestingModule]
+            imports: [HttpClientTestingModule],
         });
         service = TestBed.inject(AddressService);
-        httpMock = TestBed.inject(HttpTestingController);
+        signalSpy = spyOn(service.errorMessage$, 'set');
     });
 
     describe('Testing addAddress()', () => {
@@ -70,27 +69,33 @@ describe('AddressService', () => {
         });
     });
 
-    describe('addAddress() error handling', () => {
-        it('should catch error', () => {
-            const httpErrorResponseMock = new HttpErrorResponse({
-                error: {
-                    error: { code: `some code`, message: `some message.` },
-                },
-                status: 400,
-                statusText: 'Your data is all wrong',
-            });
-            service.addAddress(addressUIMock).subscribe({
-                next: () => throwError(() => of(httpErrorResponseMock)),
-                error: (error: HttpErrorResponse) => {
-                    expect(error).toBeTruthy();
-                },
-                complete: () => null,
-            });
+    describe('Testing addAddress() error handling', () => {
+        const getReturnValue = (): Observable<Address> =>
+            service.addAddress(addressUIMock);
+        const subscribe = (): Subscription => getReturnValue().subscribe();
 
-            const request = httpMock.expectOne(
-                api
-            );
-            request.flush(httpErrorResponseMock);
+        beforeEach(() => {
+            globalSpy = httpSpy(service, 'post');
+        });
+
+        it('should return an error message & set the signal', () => {
+            subscribe();
+            expect(signalSpy).toHaveBeenCalledWith(mappedErrorResponse);
+        });
+    });
+
+    describe('Testing getAddress() error handling', () => {
+        const getReturnValue = (): Observable<AddressUI> =>
+            service.getAddress('test');
+        const subscribe = (): Subscription => getReturnValue().subscribe();
+
+        beforeEach(() => {
+            globalSpy = httpSpy(service, 'get');
+        });
+
+        it('should return an error message & set the signal', () => {
+            subscribe();
+            expect(signalSpy).toHaveBeenCalledWith(mappedErrorResponse);
         });
     });
 });
