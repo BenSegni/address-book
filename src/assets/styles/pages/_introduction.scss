@@ -13,6 +13,20 @@
     height: 90vh;
     margin-top: 4rem;
 
+    .skip-button {
+        background: transparent;
+        color: $color-five;
+        font-family: inherit;
+        border: none;
+        text-decoration: underline;
+        margin-top: 1rem;
+        cursor: pointer;
+
+        &:hover {
+            color: $color-two;
+        }
+    }
+
     img {
         margin-top: 3rem;
         margin-bottom: -4rem;
