@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable, WritableSignal, signal } from '@angular/core';
-import { Address, AddressApiMapper, AddressMapper, AddressUI } from '../models/interface/address';
+import { Address, AddressApiMapper, AddressDTO, AddressMapper, AddressUI } from '../models/interface/address';
 import { Observable, catchError, map, of, tap } from 'rxjs';
 import { api } from '../../../global/api/api.config';
 import { AddressErrorMessage, ErrorMessageMapper } from '../models/interface/address.error';
@@ -33,7 +33,7 @@ export class AddressService {
      * @returns @type {{ AddressDTO as Observable }}
      */
     public addAddress(payload: AddressUI): Observable<Address> {
-        return this._http.post<Address>(
+        return this._http.post<AddressDTO>(
             api,
             AddressApiMapper.apiMap(payload)
         ).pipe(
