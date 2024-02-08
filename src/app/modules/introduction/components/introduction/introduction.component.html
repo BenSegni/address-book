@@ -6,8 +6,10 @@
     </div>
     <img [src]="bobafett" [alt]="bobafett | altText">
     <app-introduction-background></app-introduction-background>
-    <button class="skip-button" (click)="skipButtonWasClicked()">Skip Intro...</button>
+    <button *ngIf="!_introductionService.introductionFinished" class="skip-button" (click)="skipButtonWasClicked()">Skip
+        Intro...</button>
     <ng-container *ngIf="_introductionService.introductionFinished">
-        <app-search-address-link [introductionIsFinished]="_introductionService.introductionFinished"></app-search-address-link>
+        <app-search-address-link
+            [introductionIsFinished]="_introductionService.introductionFinished"></app-search-address-link>
     </ng-container>
 </div>
