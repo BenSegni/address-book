@@ -64,7 +64,7 @@ export class AddressService {
      */
 
     public getAddress(id: string): Observable<AddressUI> {
-        return this._http.get<AddressUI>(`${api}/${id}`).pipe(
+        return this._http.get<AddressDTO>(`${api}/${id}`).pipe(
             catchError((err) => of(err).pipe(
                 tap((err) => {
                     this.errorMessage$.set(ErrorMessageMapper.map(err));
