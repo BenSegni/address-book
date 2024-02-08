@@ -1,7 +1,7 @@
 import { TestBed, fakeAsync, tick } from '@angular/core/testing';
 
 import { IntroductionService } from './introduction.service';
-import { delay, of } from 'rxjs';
+import { delay, of, take } from 'rxjs';
 import { dialogue } from '../data/dialogue.text';
 
 describe('IntroductionService', () => {
@@ -17,7 +17,7 @@ describe('IntroductionService', () => {
             const expectedDialogue = dialogue[3];
             spyOn(service, 'dialogueStream').and.returnValue(of(expectedDialogue).pipe(delay(2500)));
 
-            service.dialogueStream().subscribe(recievedDialogue => {
+            service.dialogueStream().pipe(take(5)).subscribe(recievedDialogue => {
                 expect(recievedDialogue).toBe(expectedDialogue);
                 done();
             });

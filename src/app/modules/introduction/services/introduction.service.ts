@@ -13,6 +13,7 @@ export class IntroductionService {
 
     public dialogueStream(): Observable<IntroductionDialogue> {
         return this.dialogue$.pipe(
+            take(5),
             concatMap( text => of(text).pipe ( delay( 2500 ) ))
         );
     }
