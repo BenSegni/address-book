@@ -19,7 +19,7 @@ export interface Address extends AddressDTO {
 }
 
 export class AddressApiMapper {
-    static apiMap(data: any): AddressDTO {
+    static apiMap(data: AddressUI): AddressDTO {
         return {
             addressee: data.addressee,
             street1: data.streetLineOne,
@@ -32,7 +32,7 @@ export class AddressApiMapper {
 }
 
 export class AddressMapper {
-    static map(data: any): AddressUI {
+    static map(data: AddressDTO): AddressUI {
         return {
             addressee: data.addressee,
             streetLineOne: data.street1,
